@@ -17,7 +17,10 @@ require "rails_helper"
 
 describe "favorites_api" do
   it "returns favorite asteroids" do
-
+    user = create(:user)
+    user.create_api_key(value: "abc123")
+    user.favorites.create(neo_reference_id: "2153306", user_id: user.id)
+    
     get '/api/v1/user/favorites?api_key=abc123'
 
     results = JSON.parse(response.body, symbolize_names: true)

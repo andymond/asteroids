@@ -2,6 +2,7 @@ class DangerousDayParser
 
   def initialize(results)
     @dates = results[:near_earth_objects]
+    binding.pry
   end
 
   def dates_with_passing_asteroids
@@ -40,5 +41,4 @@ class DangerousDayParser
       Asteroid.new(attrs)
     end
   end
-
 end

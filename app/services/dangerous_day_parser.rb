@@ -2,13 +2,11 @@ class DangerousDayParser
 
   def initialize(results)
     @dates = results[:near_earth_objects]
-    binding.pry
   end
 
   def dates_with_passing_asteroids
     @dates.map do |date, asteroids|
-      [date, asteroids.map { |asteroid| [asteroid[:is_potentially_hazardous_asteroid], asteroid[:name], asteroid[:neo_reference_id]]
-        }]
+      [date, asteroids.map { |asteroid| Asteroid.new(asteroid) }]
     end.to_h
   end
 
@@ -30,15 +28,9 @@ class DangerousDayParser
     end
   end
 
-  def dangerous_day_details
-    dates_with_passing_asteroids[most_dangerous_day[0]].select do |a|
-      a[0] == true
-    end
-  end
-
   def dangerous_asteroids
-    dangerous_day_details.map do |attrs|
-      Asteroid.new(attrs)
+    dates_with_passing_asteroids[most_dangerous_day[0]].select do |a|
+      a.dangerous == true
     end
   end
 end

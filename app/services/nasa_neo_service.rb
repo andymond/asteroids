@@ -12,8 +12,8 @@ class NasaNeoService
       { id: favorite.id,
         neo_reference_id: favorite.neo_reference_id,
         user_id: user.id,
-        asteroid: {name: a.api_name,
-          is_potentially_hazardous_asteroid: a.api_dangerous
+        asteroid: {name: a.name,
+          is_potentially_hazardous_asteroid: a.dangerous
         }
       }
     end

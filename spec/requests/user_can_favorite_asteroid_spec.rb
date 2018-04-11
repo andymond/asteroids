@@ -1,17 +1,4 @@
 require "rails_helper"
-#
-# When I send a POST request to "/api/v1/user/favorites" with an 'api_key' of 'abc123' and a 'neo_reference_id' of '2021277'
-# Then I should receive a response with a status code of 200
-# And the body should be JSON as follows:
-# ```{
-#   "id":2,
-#   "neo_reference_id": "2021277",
-#   "user_id": 1,
-#   "asteroid": {
-#     "name": "21277 (1996 TO5)",
-#     "is_potentially_hazardous_asteroid": false,
-#   }
-# }```
 
 describe "favorites api" do
   it "allows user to add an asteroid to their favorites" do

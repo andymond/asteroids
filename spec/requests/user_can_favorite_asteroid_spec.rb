@@ -17,7 +17,7 @@ describe "favorites api" do
   it "allows user to add an asteroid to their favorites" do
     user = create(:user)
     user.create_api_key(value: "abc123")
-    fav = user.favorites.create(neo_reference_id: "2153306", user_id: user.id)
+    fav = user.favorites.create(neo_reference_id: "2153306")
 
     post "/api/v1/user/favorites?api_key=abc123&neo_reference_id=2021277"
 

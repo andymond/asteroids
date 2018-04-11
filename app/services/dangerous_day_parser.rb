@@ -35,4 +35,10 @@ class DangerousDayParser
     end
   end
 
+  def dangerous_asteroids
+    dangerous_day_details.map do |attrs|
+      Asteroid.new(attrs)
+    end
+  end
+
 end

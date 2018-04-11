@@ -6,6 +6,6 @@ class MostDangerousDayController < ApplicationController
     @start_date = Time.parse(params[:start_date]).strftime("%B %-d, %Y")
     @end_date = Time.parse(params[:end_date]).strftime("%B %-d, %Y")
     @most_dangerous_day = parser.most_dangerous_day
-    @details = parser.dangerous_day_details
+    @details = parser.dangerous_asteroids
   end
 end

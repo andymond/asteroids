@@ -8,7 +8,7 @@
 
 <% @details.each do |asteroid| %>
   <div class="asteroid">
-    <p>Name: <%= asteroid[1] %></p>
-    <p>NEO Reference ID: <%= asteroid[2] %></p>
+    <p>Name: <%= asteroid.name %></p>
+    <p>NEO Reference ID: <%= asteroid.neo_id %></p>
   </div>
 <% end %>

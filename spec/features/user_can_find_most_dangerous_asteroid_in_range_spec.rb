@@ -8,7 +8,7 @@ describe "User visits root and enters start & end date" do
 
     fill_in "start_date", with: "2018-01-01"
     fill_in "end_date", with: "2018-01-07"
-    click_on "Determine the Most Dangerous Day"
+    find(".btn-outline").click
 
     expect(current_path).to eq("/most_dangerous_day")
     expect(page).to have_content("January 1, 2018 - January 7, 2018")

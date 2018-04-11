@@ -19,6 +19,19 @@ class NasaNeoService
     end
   end
 
+  def get_asteroid(user, id)
+    favorite = user.favorites.find_by(neo_reference_id: id)
+    attrs = get_json("#{favorite.neo_reference_id}?api_key=#{ENV['NASA_API_KEY']}")
+    a = Asteroid.new(attrs)
+    { id: favorite.id,
+      neo_reference_id: favorite.neo_reference_id,
+      user_id: user.id,
+      asteroid: {name: a.name,
+        is_potentially_hazardous_asteroid: a.dangerous
+      }
+    }
+  end
+
   private
     attr_reader :conn
 

@@ -1,1 +1,14 @@
-@most_dangerous_day
+<div class="range">
+  <%= @start_date %> - <%= @end_date %>
+</div>
+
+<div class="most-dangerous-header">
+  The most dangerous day is <%= Time.new(@most_dangerous_day[0].to_s).strftime("%B %d, %Y") %>, with <%= @most_dangerous_day[1] %> potentially dangerous asteroids
+</div>
+
+<% @details.each do |asteroid| %>
+  <div class="asteroid">
+    <p>Name: <%= asteroid[1] %></p>
+    <p>NEO Reference ID: <%= asteroid[2] %></p>
+  </div>
+<% end %>

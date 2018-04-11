@@ -24,8 +24,14 @@ class DangerousDayParser
   end
 
   def most_dangerous_day
-    dates_with_hazardous_counts.max_by do |date, count|
+    date_count = dates_with_hazardous_counts.max_by do |date, count|
       count
+    end
+  end
+
+  def dangerous_day_details
+    dates_with_passing_asteroids[most_dangerous_day[0]].select do |a|
+      a[0] == true
     end
   end
 

@@ -8,8 +8,7 @@ class Asteroid
   end
 
   def self.get_asteroids(dates)
-    ns = NasaService.new
-    ns.get_asteroids_within_dates(dates)
+    NasaService.new.get_asteroids_within_dates(dates)
   end
 
 end

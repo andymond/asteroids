@@ -7,7 +7,7 @@ describe "favorites api" do
     fav = user.favorites.create(neo_reference_id: "2153306")
 
     post "/api/v1/user/favorites?api_key=abc123&neo_reference_id=2021277"
-
+      
     results = JSON.parse(response.body, symbolize_names: true)
 
     expect(results).to be_a Hash

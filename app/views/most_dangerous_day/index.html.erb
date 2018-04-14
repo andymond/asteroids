@@ -1,12 +1,12 @@
 <div class="range">
-  <%= @start_date %> - <%= @end_date %>
+  <%= @presenter.start_date %> - <%= @presenter.end_date %>
 </div>
 
 <div class="most-dangerous-header">
-  The most dangerous day is <%= Time.new(@most_dangerous_day[0].to_s).strftime("%B %d, %Y") %>, with <%= @most_dangerous_day[1] %> potentially dangerous asteroids
+  The most dangerous day is <%= @presenter.most_dangerous_day %>, with <%= @presenter.most_dangerous_day[1] %> potentially dangerous asteroids
 </div>
 
-<% @details.each do |asteroid| %>
+<% @presenter.dangerous_asteroids.each do |asteroid| %>
   <div class="asteroid">
     <p>Name: <%= asteroid.name %></p>
     <p>NEO Reference ID: <%= asteroid.neo_id %></p>

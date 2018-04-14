@@ -6,4 +6,10 @@ class Asteroid
     @name          = attrs[:name]
     @neo_id        = attrs[:neo_reference_id]
   end
+
+  def self.get_asteroids(dates)
+    ns = NasaService.new
+    ns.get_asteroids_within_dates(dates)
+  end
+
 end

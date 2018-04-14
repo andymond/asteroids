@@ -1,7 +1,7 @@
 class DangerousDayParser
 
-  def initialize(results)
-    @dates = results[:near_earth_objects]
+  def initialize(asteroids)
+    @dates = asteroids[:near_earth_objects]
   end
 
   def dates_with_passing_asteroids

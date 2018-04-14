@@ -12,6 +12,10 @@ class MostDangerousDayPresenter
     Time.new(@parser.most_dangerous_day[0].to_s).strftime("%B %d, %Y")
   end
 
+  def mdd_asteroid_count
+    @parser.most_dangerous_day[1]
+  end
+
   def dangerous_asteroids
     @parser.dangerous_asteroids
   end

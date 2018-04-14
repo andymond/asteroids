@@ -23,7 +23,7 @@ class DangerousDayParser
   end
 
   def most_dangerous_day
-    date_count = dates_with_hazardous_counts.max_by do |date, count|
+    dates_with_hazardous_counts.max_by do |date, count|
       count
     end
   end

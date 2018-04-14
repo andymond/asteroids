@@ -3,7 +3,7 @@
 </div>
 
 <div class="most-dangerous-header">
-  The most dangerous day is <%= @presenter.most_dangerous_day %>, with <%= @presenter.most_dangerous_day[1] %> potentially dangerous asteroids
+  The most dangerous day is <%= @presenter.most_dangerous_day %>, with <%= @presenter.mdd_asteroid_count %> potentially dangerous asteroids
 </div>
 
 <% @presenter.dangerous_asteroids.each do |asteroid| %>

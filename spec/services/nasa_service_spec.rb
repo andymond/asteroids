@@ -15,5 +15,13 @@ describe NasaService do
       expect(results[:near_earth_objects][:"2018-01-04"][0][:is_potentially_hazardous_asteroid]).to be false
     end
 
+    it "get_asteroid" do
+      results = service.get_asteroid("2439898")
+
+      expect(results).to be_a Hash
+      expect(results[:neo_reference_id]).to eq("2439898")
+      expect(results[:name]).to eq("439898 (2000 TG2)")
+    end
+
   end
 end
